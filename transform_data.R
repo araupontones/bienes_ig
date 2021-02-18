@@ -2,41 +2,6 @@ source("set_up.R")
 
 
 
-#definir file de excel
-excel = "pdf1.xlsx"
-
-
-
-
-table_raw= read_xlsx(excel, sheet = "Table 56")
-
-#limpiar raw sheet
-table_clean = table_raw %>%
-  mutate(
-    ##comunidad autonoma
-    CA = names(.)[1],
-    ##identificar tabla del excel
-    table = "x") %>%
-  filter(!row_number()==1) %>%
-  
-  ##limpiar sellos que aparecen de manera aleatoria
-  mutate_if(is.character,function(x){case_when(x=="16 FEB. 2" ~ NA_character_,
-                                               T ~ x)}) %>%
-  ##intento por crear localidad (*A MEJORAR)
-  mutate(localidad = case_when(.[[1]]=='"' ~ NA_character_,
-                               T ~ .[[1]]),
-         localidad = zoo::na.locf0(localidad),
-         localidad = case_when(all(is.na(localidad)) ~ "NA_",
-                               T ~ localidad
-         )
-  ) %>%
-  ##eliminar columnas vacias
-  select_if(function(x) !(all(is.na(x)) | all(x==""))) %>%
-  select(-1) 
-
-
-
-
 
 #Funcion para importar datos --------------------------------------------------
 
