@@ -85,9 +85,9 @@ format_excel = function(excel, x){
 #Importar datos -------------------------------------------------------------------------
 
 tables = paste("Table", seq(19,313,1))
-#tables = "Table 56"
 
-#mi_lista = map2("pdf1.xlsx",tables, format_excel)
+
+mi_lista = map2("pdf1.xlsx",tables, format_excel)
 
 mis_datos = do.call(rbind, mi_lista) %>% tibble()
 
@@ -120,6 +120,7 @@ filter(Orden != "Nº Orden") %>%
 
 
 
+export(mis_datos_clean, "andalucia_castillaLeon.rds")
 # c_titular = mis_datos_clean %>%
 #   filter(is.na(Titular))
 

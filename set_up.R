@@ -1,3 +1,3 @@
 library(pacman)
 
-p_load(readxl, tidyverse)
+p_load(readxl, tidyverse, rio)
