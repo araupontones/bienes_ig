@@ -276,7 +276,7 @@ server <- function(input, output, session) {
               <h3>{notas} notas simples de las cuales <b>{titulo_distinto} {distinto_perc} </b>
               tienen título distinto de certificación eclesiástica.</h3>
               <p>A continuación se muestran los <b>5 municipios, registros, titulares y tipos de 
-              inmuebles</b> con más notas simples reportadas dentro de esta provinica. La totalidad de
+              inmuebles</b> con más notas simples reportadas dentro de esta provincia. La totalidad de
               las notas simples de {input$i_provincia} es presentada debajo de estas tablas.
               </p><br>
               <p class = "aviso">{aviso}</p>'))
