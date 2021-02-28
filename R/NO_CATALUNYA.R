@@ -18,6 +18,7 @@ names(datos_raw)
 #limpiar datos  --------------------------------------------------------------
 datos_clean = limpar_datos(datos_raw)
 
+
 unique(datos_clean$Municipio)
 
 #eliminar redundantes

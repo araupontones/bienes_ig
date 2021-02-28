@@ -15,4 +15,4 @@ CALAMOCHA 59, dentro de la fila de loclaidad
 
 Celdas coloreadas en gris: NO TIENE  o sin nombre
 
-Murcia, hay un NO/SI y Adquirida por renuncia..
+Murcia, registro MULA orden 12 distinto de certificacion hay un NO/SI y Adquirida por renuncia..

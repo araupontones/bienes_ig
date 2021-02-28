@@ -23,7 +23,7 @@ names <- as.character(test[1,])
 look_ups = import(file.path(dir_lookups, "lookup.rds"))
 provincias = look_ups$provincia
 comunidades = "CATALUÑA"
-
+provincias
 
 #importar functions
 

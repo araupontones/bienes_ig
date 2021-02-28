@@ -34,24 +34,27 @@ sort(unique(datos_raw$registro))
 #limpiar datos  --------------------------------------------------------------
 datos_clean = limpar_datos(datos_raw2)
 
+galicia = datos_clean %>%
+  filter(!is.na(orden)) %>%
+  filter(row_number() < 7132)
 
 
 
 #eliminar redundantes
-galicia = datos_clean %>%
-  filter(comunidad == "GALICIA") %>%
-  #mutate(Titulo = str_remove(Titulo, "021 13:12:33 Entrada: 88949")) %>%
-  filter(!is.na(orden)) %>%
-  add_count(provincia,registro, localidad, orden, Titulo, na_count) %>%
-  group_by(registro, orden, Municipio, Titulo) %>%
-  arrange(registro, orden, Titulo, Municipio, localidad) %>%
-  group_by(registro, orden, Titulo, Municipio) %>%
-  slice(1) %>%
-  select(-n) %>%
-  ungroup() %>%
-  filter(!table %in% c("Table 282", "Table 297")) %>%
-  filter(!(table == "Table 69" & orden ==332)) %>%
-  filter(!(table == "Table 224" & orden ==72))
+# galicia = datos_clean %>%
+#   filter(comunidad == "GALICIA") %>%
+#   #mutate(Titulo = str_remove(Titulo, "021 13:12:33 Entrada: 88949")) %>%
+#   filter(!is.na(orden)) %>%
+#   add_count(provincia,registro, localidad, orden, Titulo, na_count) %>%
+#   group_by(registro, orden, Municipio, Titulo) %>%
+#   arrange(registro, orden, Titulo, Municipio, localidad) %>%
+#   group_by(registro, orden, Titulo, Municipio) %>%
+#   slice(1) %>%
+#   select(-n) %>%
+#   ungroup() %>%
+#   filter(!table %in% c("Table 282", "Table 297")) %>%
+#   filter(!(table == "Table 69" & orden ==332)) %>%
+#   filter(!(table == "Table 224" & orden ==72))
   
   #%>%
   #add_count(registro, orden) %>%
