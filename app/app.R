@@ -135,7 +135,7 @@ ui <- fluidPage(
   target="_blank">
   Gobierno de España</a> publicó un listado de 34,961 
        propiedades que la Iglesia católoca registró a su nombre entre 
-       2004 y 2015. El listado completo fue publicado
+       1998 y 2015. El listado completo fue publicado
        en dos documentos de más de 3,000 páginas y en formato ".pdf".
        
        Utilizando técnicas de <i>Data Scrapping</i> que utilizo
@@ -150,7 +150,7 @@ ui <- fluidPage(
          
          
          <br><br>
-         <p>Los documentos oficiales en su formato original pueden
+         <p>Los documentos oficiales en su formato original
       están disponibles <a href="http://ep00.epimg.net/descargables/2021/02/16/81f680e3671ec19edb395114f640972c.pdf"
       target="_blank">aquí</a> y 
        <a href="http://ep00.epimg.net/descargables/2021/02/16/070845446d6851c3122a7a09570e31b5.pdf"
